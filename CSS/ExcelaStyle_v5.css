@@ -124,6 +124,17 @@ body {
     font-weight: 100;
   }
 
+  #myModal {
+    color:gray;
+  }
+  #modal-title {
+    color:gray;
+  }
+
+  #myModalLabel {
+    color:gray;
+  }
+
   /* Headings */
   h1, h2, h3, h4, h5, h6 { 
     padding-bottom: 0px;
@@ -156,9 +167,9 @@ a.panel-title {text-decoration: none;}
 a.panel-heading {text-decoration: none;}
 a.panel-collapse {text-decoration: none;}
 
-.modal a.btn {color: white;}
-.modal-footer {border-top: 0px none;}
-.modal-header {border-bottom: 0px none;}
+.modal a.btn {color: gray;}
+.modal-footer {border-top: 0px none; color:gray;}
+.modal-header {border-bottom: 0px none; color:gray;}
 
   #nav-hover {
     position: absolute;
@@ -193,7 +204,7 @@ a.panel-collapse {text-decoration: none;}
 
   .jumbotron a:link {color: white; text-decoration: none;}
   .jumbotron a:visited {color:white; text-decoration: none;}
-  .jumbotron a:hover {color:white; text-decoration: none;}
+  .jumbotron a:hover {color:white; text-decoration: none; opacity: 0.8}
   .jumbotron a:active {color:white; text-decoration: none;}
 
   #shareduse-content {
