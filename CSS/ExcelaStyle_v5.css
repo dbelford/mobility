@@ -48,7 +48,7 @@ html {
   #veh_panel {
     background-color: #FFFFFF; opacity: 1;
     box-shadow: 0 0 5px #BBBBBB;
-    /*position:absolute;*/
+    position:absolute;
     top:715px;
     left:15px;
     z-index:101; 
@@ -58,9 +58,9 @@ html {
   #income_panel {
     background-color: #FFFFFF; opacity: 1;
     box-shadow: 0 0 5px #BBBBBB;        
-/*    position:absolute;
+    position:absolute;
     top:715px;
-    left:265px;*/
+    left:265px;
     z-index:101; 
     width: 230px; 
   }
@@ -68,9 +68,9 @@ html {
   #poverty_panel {
     background-color: #FFFFFF; opacity: 1;
     box-shadow: 0 0 5px #BBBBBB;        
-/*    position:absolute;
+    position:absolute;
     top:715px;
-    left:495px;*/
+    left:495px;
     z-index:101; 
     width: 230px; 
   }
