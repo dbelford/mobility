@@ -34,7 +34,7 @@ html {
   #logo {
     left: 10px;
     top: 80px;
-    position: absolute;
+    /*position: absolute;*/
     z-index: 100;
   }
 
@@ -48,7 +48,7 @@ html {
   #veh_panel {
     background-color: #FFFFFF; opacity: 1;
     box-shadow: 0 0 5px #BBBBBB;
-    position:absolute;
+    /*position:absolute;*/
     top:715px;
     left:15px;
     z-index:101; 
@@ -58,9 +58,9 @@ html {
   #income_panel {
     background-color: #FFFFFF; opacity: 1;
     box-shadow: 0 0 5px #BBBBBB;        
-    position:absolute;
+/*    position:absolute;
     top:715px;
-    left:265px;
+    left:265px;*/
     z-index:101; 
     width: 230px; 
   }
@@ -68,9 +68,9 @@ html {
   #poverty_panel {
     background-color: #FFFFFF; opacity: 1;
     box-shadow: 0 0 5px #BBBBBB;        
-    position:absolute;
+/*    position:absolute;
     top:715px;
-    left:495px;
+    left:495px;*/
     z-index:101; 
     width: 230px; 
   }
@@ -211,4 +211,20 @@ a.nav-hover {color: white; text-decoration: none;}
   font-family: 'PT Sans', sans-serif;
   font-weight: 400;
   color: #fff;
+}
+
+.jumbotron h1 {
+  font-size: 7em; 
+  line-height: 1em; 
+  font-weight: 700; 
+  color: #fff; 
+  padding-top: 350px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.jumbo-image {
+
+  background-image: url(http://sandbox.idre.ucla.edu/up206b/groups/excela/wp-content/uploads/2014/06/header.jpg);
+  background-position: center;
+
 }

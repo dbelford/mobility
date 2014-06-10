@@ -932,11 +932,148 @@ $(function() {
 </head>
 
 <body>
-  <!-- high chart-->
+
+
+<div class="jumbotron jumbo-image" style="height: 850px; margin-bottom: 0px;">
+  <h1 style="">
+    Shared use <br/>
+    Mobility
+
+  </h1>
+</div>
+
+<div class="navbar navbar-static-top" role="navigation" data-200="top:-40px;" data-300="top:0px;" style="margin-bottom: 0px;">
+
+  <div class="container">
+    <a class="navbar-brand" href="#">Explore Shared-Use Mobility in Los Angeles</a>
+    <span class="pull-right">
+      <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">How to Use</button>
+      <a class="btn btn-default navbar-btn" href="#shareduse-content" role="button">What is Shared-Use Mobility?</a>
+    </span>
+  </div>
+</div>
+
+
+
+<div style="width: 100%; height: 850px;">
+
+
+
+    <!-- high chart-->
   <div id="veh_panel"></div>
   <div id="income_panel"></div>
   <div id="poverty_panel"></div>
  
+    <!-- logo -->
+  <div id="logo">
+    <div id="logo_panel" align="center"> </div>
+
+      <!-- Demographics -->
+    <div id="overlay-panel">
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location for bus service analysis">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                Analysis Tools <span class="caret"></span>
+              </a>
+            </h4>
+          </div>
+
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+
+              <div class="well well-sm" >    
+                <label>Select by:</label>
+                <div class="switch-toggle well">
+                  <input id="vehperhh_checkbox" name="select" onclick="" type="radio" checked/> 
+                  <label for="vehperhh_checkbox" onclick="excela.hoverOn()">Census tract</label>
+                  <input id="buffer_click" name="select" onclick="" type="radio"/> 
+                  <label for="buffer_click" onclick="excela.bufferOn()">Buffer</label>
+                  <a class="btn btn-success"></a>
+                </div>
+              </div>
+              
+              <!-- slider -->
+              <div id="slider">
+                <div class="well well-sm" >                
+                    <label for="amount" >Median Income Range</label>
+                    <input type="text" id="amount" style="border:0; color:#000000; font-weight:bold;">
+                    <div id="slider-range" align="center" style="width:170px;"></div>                
+                </div>
+              </div>
+
+              <!-- Avg VehperHH -->
+              <div class="well well-sm";>            
+                    <label>Legend</label>
+                    <p> Average Vehicles Per Household </p>
+                    <img width="180" src="http://sandbox.idre.ucla.edu/up206b/2014/excela/images/vehownbar.jpg">               
+              </div>
+
+            </div>
+          </div>
+
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                Shared-Use Mobility Options <span class="caret"></span>
+              </a>
+            </h4>
+          </div>
+
+          <div id="collapseTwo" class="panel-collapse collapse" align="left">
+            <div class="panel-body">
+
+              <label><input id="bikeLayer" onclick="excela.toggleBike()" type="checkbox" unchecked/> Bicycle Network </label><br>
+              <label><input id="metroLayer" onclick="excela.togglePolylines()" type="checkbox" unchecked/> Metro Rail Network </label><br>
+              <label><input id="zipcarLayer" onclick="zipcar.updateMarkers()" type="checkbox" unchecked/> Zipcar Sites </label><br>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <div id="map-canvas" class="leaflet-container leaflet-fade-anim" style="width:100%; height:850px" tabindex="0">
+  </div>
+
+</div>
+
+
+<div id="shareduse-content">
+  <div class="container">
+    <br><br><br><br>
+    <h3> What is Shared-Use Mobility? </h3><br>
+
+    <blockquote><p><span style="color: #fff; font-size: 18px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 30.600000381469727px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">Shared-use mobility is defined as mobility services that are shared among users including traditional public transportation services, such as buses and trains; taxis and limos; ridesharing (carpooling, vanpooling, and real time ridesharing services); carsharing (round-trip, one-way, and personal vehicle sharing); Transportation Network Companies; bikesharing; scooter sharing; shuttle services; neighborhood jitneys; and commercial delivery vehicles providing flexible goods movement.</span></p><br>
+    
+    <p><span style="color: #fff; font-size: 18px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 30.600000381469727px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">&#8211; <a href="http://sharedusemobilitycenter.org/about-us/" style="color:yellow">Shared Use Mobility Center</a></span></p></blockquote><br>
+
+    <p style="text-align: left; width: 80%; margin: 0 auto;">What does shared-use mobility means for people with limited access to transportation options? These services have the potential to make existing trips more efficient, by offering excess capacity or ownership to those who need it. Shared-use mobility challenges single-occupancy vehicular travel simply by sharing.</p><br>
+
+    <p style="text-align: left; width: 80%; margin: 0 auto;">Traditional transit services like buses and trains are made possible because people are willing to share a common vehicle that traverses a common route. Similarly, ridesharing services such as carpooling and vanpooling work because people are willing to share a common vehicle that reaches a common destination.</p><br>
+
+    <p style="text-align: left; width: 80%; margin: 0 auto;">Have you ever borrowed a book from the library? Shared-use mobility works like this too. People nowadays can find mobility options through the sharing economy. Services like carsharing, bikesharing, and scooter sharing provide access to mobility without having to partake in full ownership. Have you ever borrowed a book from a friend? Peer-to-peer services allow people to access various means of mobility from ordinary people. These days, people can publicly list their car, bike, or whatever for others to borrow, usually at a cost that is much lower than actually having to fully own it — same as reading a book without having to own it.</p><br>
+
+    <p style="text-align: left; width: 80%; margin: 0 auto;">Shared-use mobility provides sensible and affordable means of getting around. It increases options for people with limited access to transportation.</p><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+
+    <p style="text-align: center; font-size: 1.3em;">
+      © 2014 Excela <a id="logo_link" href="http://sandbox.idre.ucla.edu/up206b/groups/excela/">
+      <img src="http://sandbox.idre.ucla.edu/up206b/groups/excela/wp-content/uploads/2014/04/Favicon.png" width='20' style="vertical-align: top; padding-top: 1px;">
+    </p>
+  </div>
+</div>
+
+
   <!--feedback-->
   <button id="fbbutton" type="button" class="btn btn-success">Feedback</button>
   
@@ -961,81 +1098,6 @@ $(function() {
   </div>
 
   
-  <!-- logo -->
-  <div id="logo">
-      <div id="logo_panel" align="center">
-      </div>
-
-  <!-- Demographics -->
-  <div id="overlay-panel">
-    <input id="pac-input" class="controls" type="text" placeholder="Enter a location for bus service analysis">
-    <div class="panel-group" id="accordion">
-      <div class="panel panel-default">
-
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-              Analysis Tools <span class="caret"></span>
-            </a>
-          </h4>
-        </div>
-
-        <div id="collapseOne" class="panel-collapse collapse">
-          <div class="panel-body">
-
-            <div class="well well-sm" >    
-              <label>Select by:</label>
-              <div class="switch-toggle well">
-                <input id="vehperhh_checkbox" name="select" onclick="" type="radio" checked/> 
-                <label for="vehperhh_checkbox" onclick="excela.hoverOn()">Census tract</label>
-                <input id="buffer_click" name="select" onclick="" type="radio"/> 
-                <label for="buffer_click" onclick="excela.bufferOn()">Buffer</label>
-                <a class="btn btn-success"></a>
-              </div>
-            </div>
-            
-            <!-- slider -->
-            <div id="slider">
-              <div class="well well-sm" >                
-                  <label for="amount" >Median Income Range</label>
-                  <input type="text" id="amount" style="border:0; color:#000000; font-weight:bold;">
-                  <div id="slider-range" align="center" style="width:170px;"></div>                
-              </div>
-            </div>
-
-            <!-- Avg VehperHH -->
-            <div class="well well-sm";>            
-                  <label>Legend</label>
-                  <p> Average Vehicles Per Household </p>
-                  <img width="180" src="http://sandbox.idre.ucla.edu/up206b/2014/excela/images/vehownbar.jpg">               
-            </div>
-
-          </div>
-        </div>
-
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-              Shared-Use Mobility Options <span class="caret"></span>
-            </a>
-          </h4>
-        </div>
-
-        <div id="collapseTwo" class="panel-collapse collapse" align="left">
-          <div class="panel-body">
-
-            <label><input id="bikeLayer" onclick="excela.toggleBike()" type="checkbox" unchecked/> Bicycle Network </label><br>
-            <label><input id="metroLayer" onclick="excela.togglePolylines()" type="checkbox" unchecked/> Metro Rail Network </label><br>
-            <label><input id="zipcarLayer" onclick="zipcar.updateMarkers()" type="checkbox" unchecked/> Zipcar Sites </label><br>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -1064,46 +1126,6 @@ $(function() {
   </div>
 </div>
 
-<div class="navbar navbar-static-top" role="navigation" data-200="top:-40px;" data-300="top:0px;" style="margin-bottom: 0px;">
-
-  <div class="container">
-    <a class="navbar-brand" href="#">Explore Shared-Use Mobility in Los Angeles</a>
-    <span class="pull-right">
-      <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">How to Use</button>
-      <a class="btn btn-default navbar-btn" href="#shareduse-content" role="button">What is Shared-Use Mobility?</a>
-    </span>
-  </div>
-
-</div>
-
-<div id="map-canvas" class="leaflet-container leaflet-fade-anim" style="width:100%; height:850px" tabindex="0">
-</div>
-
-<div id="shareduse-content">
-  <div class="container">
-    <br><br><br><br>
-    <h3> What is Shared-Use Mobility? </h3><br>
-
-    <blockquote><p><span style="color: #fff; font-size: 18px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 30.600000381469727px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">Shared-use mobility is defined as mobility services that are shared among users including traditional public transportation services, such as buses and trains; taxis and limos; ridesharing (carpooling, vanpooling, and real time ridesharing services); carsharing (round-trip, one-way, and personal vehicle sharing); Transportation Network Companies; bikesharing; scooter sharing; shuttle services; neighborhood jitneys; and commercial delivery vehicles providing flexible goods movement.</span></p><br>
-    
-    <p><span style="color: #fff; font-size: 18px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 30.600000381469727px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">&#8211; <a href="http://sharedusemobilitycenter.org/about-us/" style="color:yellow">Shared Use Mobility Center</a></span></p></blockquote><br>
-
-    <p style="text-align: left; width: 80%; margin: 0 auto;">What does shared-use mobility means for people with limited access to transportation options? These services have the potential to make existing trips more efficient, by offering excess capacity or ownership to those who need it. Shared-use mobility challenges single-occupancy vehicular travel simply by sharing.</p><br>
-
-    <p style="text-align: left; width: 80%; margin: 0 auto;">Traditional transit services like buses and trains are made possible because people are willing to share a common vehicle that traverses a common route. Similarly, ridesharing services such as carpooling and vanpooling work because people are willing to share a common vehicle that reaches a common destination.</p><br>
-
-    <p style="text-align: left; width: 80%; margin: 0 auto;">Have you ever borrowed a book from the library? Shared-use mobility works like this too. People nowadays can find mobility options through the sharing economy. Services like carsharing, bikesharing, and scooter sharing provide access to mobility without having to partake in full ownership. Have you ever borrowed a book from a friend? Peer-to-peer services allow people to access various means of mobility from ordinary people. These days, people can publicly list their car, bike, or whatever for others to borrow, usually at a cost that is much lower than actually having to fully own it — same as reading a book without having to own it.</p><br>
-
-    <p style="text-align: left; width: 80%; margin: 0 auto;">Shared-use mobility provides sensible and affordable means of getting around. It increases options for people with limited access to transportation.</p><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <hr>
-
-    <p style="text-align: center; font-size: 1.3em;">
-      © 2014 Excela <a id="logo_link" href="http://sandbox.idre.ucla.edu/up206b/groups/excela/">
-      <img src="http://sandbox.idre.ucla.edu/up206b/groups/excela/wp-content/uploads/2014/04/Favicon.png" width='20' style="vertical-align: top; padding-top: 1px;">
-    </p>
-  </div>
-</div>
 
 </body>
 </html>
