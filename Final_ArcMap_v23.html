@@ -21,7 +21,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="dist/bootstrap.css">
-    <link rel="stylesheet" href="dist/toggle-switch.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   
     <!-- Excela style sheet -->
     <link rel="stylesheet" type="text/css" href="CSS\ExcelaStyle_v5.css">
@@ -189,6 +189,17 @@ zipcar.createMarker = function(coordinate, aMap, row) {
 
 function initialize() 
   {
+
+    $("a.scroll-to-hash ").on('click', function(e) {
+   // prevent default anchor click behavior
+   e.preventDefault();
+   // animate
+   $('html, body').animate({
+       scrollTop: $(this.hash).offset().top - 0
+     }, 1000);
+ 
+    });
+
     //Customization of the Google Map
     var mapOptions = 
       {
@@ -934,12 +945,15 @@ $(function() {
 <body>
 
 
-<div class="jumbotron jumbo-image" style="height: 850px; margin-bottom: 0px;">
-  <h1 style=""><a class="jumbo-brand" href="#navbar">
+<div id="jumbotron" class="jumbotron jumbo-image" style="height: 850px; margin-bottom: 0px;">
+  <h1 style=""><a class="jumbo-brand scroll-to-hash skrollable skrollable-before" href="#navbar">
     Shared-Use Mobility <br/>
     in Los Angeles</a>
-
   </h1>
+
+    <span class="pull-right">
+    <a href="#navbar" class="scroll-to-hash  btn btn-icon skrollable skrollable-before" role="button" style="font-size: 4em; color: white; opacity: 1;" data--100-bottom="opacity: 1;" data-center="opacity: 0;"><i class="fa fa-chevron-circle-down"></i></a><br><br>
+
 </div>
 
 <div id="navbar" class="navbar navbar-static-top" role="navigation" data-200="top:-40px;" data-300="top:0px;" style=" margin-bottom: -35px;">
@@ -948,16 +962,12 @@ $(function() {
     <a class="navbar-brand">Explore Shared-Use Mobility in Los Angeles</a>
     <span class="pull-right">
       <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">How to Use</button>
-      <a class="btn btn-default navbar-btn" href="#shareduse-content" role="button">What is Shared-Use Mobility?</a>
+      <a class="btn btn-default navbar-btn scroll-to-hash skrollable skrollable-before" href="#shareduse-content" role="button">What is Shared-Use Mobility?</a>
     </span>
   </div>
 </div>
 
-
-
 <div style="width: 100%; height: 850px;">
-
-
 
     <!-- high chart-->
   <div id="veh_panel"></div>
@@ -1062,7 +1072,10 @@ $(function() {
 
     <p style="text-align: left; width: 80%; margin: 0 auto;">Have you ever borrowed a book from the library? Shared-use mobility works like this too. People nowadays can find mobility options through the sharing economy. Services like carsharing, bikesharing, and scooter sharing provide access to mobility without having to partake in full ownership. Have you ever borrowed a book from a friend? Peer-to-peer services allow people to access various means of mobility from ordinary people. These days, people can publicly list their car, bike, or whatever for others to borrow, usually at a cost that is much lower than actually having to fully own it — same as reading a book without having to own it.</p><br>
 
-    <p style="text-align: left; width: 80%; margin: 0 auto;">Shared-use mobility provides sensible and affordable means of getting around. It increases options for people with limited access to transportation.</p><br><br><br><br>
+    <p style="text-align: left; width: 80%; margin: 0 auto;">Shared-use mobility provides sensible and affordable means of getting around. It increases options for people with limited access to transportation.</p><br><br>
+
+    <span class="pull-right">
+      <a href="#icon-canvas" class="scroll-to-hash  btn btn-icon skrollable skrollable-before" role="button" style="font-size: 4em; color: white; opacity: 1;" data--100-bottom="opacity: 1;" data-center="opacity: 0;"><i class="fa fa-chevron-circle-down"></i></a><br><br><br><br>
 
 </div>
 
@@ -1095,10 +1108,13 @@ $(function() {
     <p style="text-align: center; font-size: 1.3em;"><hr>
       © 2014 Excela <a id="logo_link" href="http://sandbox.idre.ucla.edu/up206b/groups/excela/">
       <img src="http://sandbox.idre.ucla.edu/up206b/groups/excela/wp-content/uploads/2014/04/Favicon.png" width='20' style="vertical-align: top; padding-top: 1px;"></a>
-    </p>
+
+
+      <span class="pull-right">
+      <a href="#jumbotron" class="scroll-to-hash  btn btn-icon skrollable skrollable-before" role="button" style="font-size: 4em; color: gray; opacity: 1;" data--100-bottom="opacity: 1;" data-center="opacity: 0;"><i class="fa fa-chevron-circle-up"></i></a>
+
   </div>
 </div>
-
 
   <!--feedback-->
   <button id="fbbutton" type="button" class="btn btn-success">Feedback</button>
