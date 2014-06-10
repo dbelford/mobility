@@ -5,22 +5,13 @@ html {
   -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
  }
 
- body {
+body {
   height:100%; 
   margin:0px;
   padding:0px;
   /*background-image:url('http://sandbox.idre.ucla.edu/up206b/groups/excela/wp-content/uploads/2014/06/paper.jpg');*/
   background-repeat:repeat;
 }
-
- #nav-hover {
-  position: absolute;
-  height: 40px;
- }
-
-  #shareduse-content {
-  height: 950px;
- }
 
   #map-canvas {
   }
@@ -83,7 +74,7 @@ html {
     width:90px;
   }
   
-    .controls {
+  .controls {
     margin-top: 16px;
     margin-left: 16px;
     border: 1px solid transparent;
@@ -117,8 +108,8 @@ html {
   }
 
   .well{
-  background-color: #FFFFFF;
-  padding-left: 20px;
+    background-color: #FFFFFF;
+    padding-left: 20px;
   }
 
   #type-selector {
@@ -161,57 +152,81 @@ a:active {color: gray; outline: 0; text-decoration: none;}
 a img {border: 0;}
 a img:hover {opacity: 0.8; filter:alpha(opacity=80); box-shadow: #000000;}
 
-.modal a.btn {color: white;}
-
 a.panel-title {text-decoration: none;}
 a.panel-heading {text-decoration: none;}
 a.panel-collapse {text-decoration: none;}
 
-a.nav-hover {color: white; text-decoration: none;}
-
-.nav-hover {color: white;}
-
+.modal a.btn {color: white;}
 .modal-footer {border-top: 0px none;}
 .modal-header {border-bottom: 0px none;}
 
-.navbar {
-  line-height: 3em;
-  background-color: #AD855C;
-}
-.navbar a.navbar-brand  {
-  /*font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 300;*/
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  color: #fff;
-  font-size: 2em;
-  height: 50px;
-  line-height: 45px;
-}
+  #nav-hover {
+    position: absolute;
+    height: 40px;
+  }
 
-.navbar .btn {
-  color: #AD855C;
-  border: 0px;
-  margin-top: 19px;
-  margin-bottom: 19px;
-  margin: 20px 5px;
-}
+  a.nav-hover {color: white; text-decoration: none;}
+  .nav-hover {color: white;}
+  .navbar {
+    line-height: 3em;
+    background-color: #AD855C;
+  }
 
-#shareduse-content {
-  background-color: #AD855C;
-}
+  .navbar a.navbar-brand  {
+    /*font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;*/
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 2em;
+    height: 50px;
+    line-height: 45px;
+  }
 
-#shareduse-content,
-#shareduse-content h1,
-#shareduse-content h2,
-#shareduse-content h3,
-#shareduse-content h4, 
-#shareduse-content h5, 
-#shareduse-content h6 {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  color: #fff;
-}
+  .navbar .btn {
+    color: #AD855C;
+    border: 0px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+    margin: 20px 5px;
+  }
+
+  .jumbotron a:link {color: white; text-decoration: none;}
+  .jumbotron a:visited {color:white; text-decoration: none;}
+  .jumbotron a:hover {color:white; text-decoration: none;}
+  .jumbotron a:active {color:white; text-decoration: none;}
+
+  #shareduse-content {
+    background-color: #AD855C;
+  }
+
+  #shareduse-content,
+  #shareduse-content h1,
+  #shareduse-content h2,
+  #shareduse-content h3,
+  #shareduse-content h4, 
+  #shareduse-content h5, 
+  #shareduse-content h6 {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  #icon-canvas {
+    background-color: #fff;
+  }
+
+  #icon-canvas,
+  #icon-canvas h1,
+  #icon-canvas h2,
+  #icon-canvas h3,
+  #icon-canvas h4, 
+  #icon-canvas h5, 
+  #icon-canvas h6 {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    color: gray;
+  }
 
 .jumbotron h1 {
   font-size: 7em; 
