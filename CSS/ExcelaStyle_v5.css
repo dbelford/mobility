@@ -127,11 +127,7 @@ body {
   #myModal {
     color:gray;
   }
-  #modal-title {
-    color:gray;
-  }
-
-  #myModalLabel {
+  .modal-title {
     color:gray;
   }
 
@@ -209,6 +205,10 @@ a.panel-collapse {text-decoration: none;}
 
   #shareduse-content {
     background-color: #AD855C;
+  }
+
+  #shareduse-content #myModalLabel {
+    color:gray;
   }
 
   #shareduse-content,
